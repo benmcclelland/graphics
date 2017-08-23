@@ -12,7 +12,7 @@ import (
 )
 
 func TestCannyGopher(t *testing.T) {
-	src, err := loadImage("../../testdata/gopher.png")
+	src, err := loadImage("../testdata/gopher.png")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -22,7 +22,7 @@ func TestCannyGopher(t *testing.T) {
 		t.Fatalf("%d: %v", err)
 	}
 
-	cmp, err := loadImage("../../testdata/gopher-canny.png")
+	cmp, err := loadImage("../testdata/gopher-canny.png")
 	if err != nil {
 		t.Fatal(err)
 	}
