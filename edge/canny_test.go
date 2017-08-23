@@ -18,7 +18,7 @@ func TestCannyGopher(t *testing.T) {
 	}
 
 	dst := image.NewGray(src.Bounds())
-	if err := Canny(dst, src); err != nil {
+	if err := Canny(dst, src, true); err != nil {
 		t.Fatal(err)
 	}
 

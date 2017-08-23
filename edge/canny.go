@@ -15,9 +15,12 @@ import (
 // Canny detects and returns edges from the given image.
 // Each dst pixel is given one of three values:
 //   0xff: an edge
-//   0x80: possibly an edge
 //   0x00: not an edge
-func Canny(dst *image.Gray, src image.Image) error {
+//   soft = true:
+//   0x80: possibly an edge
+//   soft = false:
+//   0x00: possibly an edge
+func Canny(dst *image.Gray, src image.Image, soft bool) error {
 	if dst == nil {
 		return fmt.Errorf("edge: dst is nil")
 	}
@@ -40,6 +43,8 @@ func Canny(dst *image.Gray, src image.Image) error {
 	if err := Sobel(mag, dir, srcGray); err != nil {
 		return err
 	}
+
+	//thresh := uint8(1)
 
 	// Non-maximum supression.
 	for y := b.Min.Y; y < b.Max.Y; y++ {
@@ -66,7 +71,7 @@ func Canny(dst *image.Gray, src image.Image) error {
 			m := mag.Pix[(y-b.Min.Y)*mag.Stride+(x-b.Min.X)*1]
 			if m > m0 && m > m1 {
 				m = 0xff
-			} else if m > m0 || m > m1 {
+			} else if (m > m0 || m > m1) && soft {
 				m = 0x80
 			} else {
 				m = 0x00
