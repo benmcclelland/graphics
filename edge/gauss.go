@@ -8,8 +8,8 @@ import (
 	"image"
 	"image/draw"
 
-	"code.google.com/p/graphics-go/graphics"
-	"code.google.com/p/graphics-go/graphics/convolve"
+	"github.com/benmcclelland/graphics"
+	"github.com/benmcclelland/graphics/convolve"
 )
 
 // LaplacianOfGaussian approximates a 2D laplacian of gaussian with a convolution kernel.
