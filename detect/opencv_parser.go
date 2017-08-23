@@ -7,7 +7,6 @@ package detect
 import (
 	"bytes"
 	"encoding/xml"
-	"errors"
 	"fmt"
 	"image"
 	"io"
@@ -79,7 +78,7 @@ func buildCascade(s *opencv_storage) (c *Cascade, name string, err error) {
 		}
 		for _, tree := range stage.Trees {
 			if tree.Tilted != 0 {
-				err = errors.New("Cascade does not support tilted features")
+				err = fmt.Errorf("Cascade does not support tilted features")
 				return
 			}
 

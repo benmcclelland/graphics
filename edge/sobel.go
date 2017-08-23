@@ -5,7 +5,7 @@
 package edge
 
 import (
-	"errors"
+	"fmt"
 	"image"
 	"image/draw"
 	"math"
@@ -42,7 +42,7 @@ var (
 
 func diffOp(mag, dir *image.Gray, src image.Image, opX, opY *convolve.SeparableKernel) error {
 	if src == nil {
-		return errors.New("graphics: src is nil")
+		return fmt.Errorf("graphics: src is nil")
 	}
 	b := src.Bounds()
 

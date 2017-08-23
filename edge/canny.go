@@ -5,7 +5,6 @@
 package edge
 
 import (
-	"errors"
 	"fmt"
 	"image"
 	"image/draw"
@@ -20,10 +19,10 @@ import (
 //   0x00: not an edge
 func Canny(dst *image.Gray, src image.Image) error {
 	if dst == nil {
-		return errors.New("edge: dst is nil")
+		return fmt.Errorf("edge: dst is nil")
 	}
 	if src == nil {
-		return errors.New("edge: src is nil")
+		return fmt.Errorf("edge: src is nil")
 	}
 
 	b := src.Bounds()

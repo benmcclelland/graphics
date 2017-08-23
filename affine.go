@@ -5,7 +5,7 @@
 package graphics
 
 import (
-	"errors"
+	"fmt"
 	"image"
 	"image/draw"
 	"math"
@@ -61,10 +61,10 @@ func (a Affine) transformRGBA(dst *image.RGBA, src *image.RGBA, i interp.RGBA) e
 // Transform applies the affine transform to src and produces dst.
 func (a Affine) Transform(dst draw.Image, src image.Image, i interp.Interp) error {
 	if dst == nil {
-		return errors.New("graphics: dst is nil")
+		return fmt.Errorf("graphics: dst is nil")
 	}
 	if src == nil {
-		return errors.New("graphics: src is nil")
+		return fmt.Errorf("graphics: src is nil")
 	}
 
 	// RGBA fast path.
@@ -111,10 +111,10 @@ func (a Affine) pt(x0, y0 int) (x1, y1 float64) {
 //   a.CenterFit(dst, src).Transform(dst, src, i).
 func (a Affine) TransformCenter(dst draw.Image, src image.Image, i interp.Interp) error {
 	if dst == nil {
-		return errors.New("graphics: dst is nil")
+		return fmt.Errorf("graphics: dst is nil")
 	}
 	if src == nil {
-		return errors.New("graphics: src is nil")
+		return fmt.Errorf("graphics: src is nil")
 	}
 
 	return a.CenterFit(dst.Bounds(), src.Bounds()).Transform(dst, src, i)

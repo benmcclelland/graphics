@@ -5,7 +5,6 @@
 package convolve
 
 import (
-	"errors"
 	"fmt"
 	"image"
 	"image/draw"
@@ -60,10 +59,10 @@ func (k fullKernel) Weights() []float64 { return k }
 func kernelSize(w []float64) (size int, err error) {
 	size = int(math.Sqrt(float64(len(w))))
 	if size*size != len(w) {
-		return 0, errors.New("graphics: kernel is not square")
+		return 0, fmt.Errorf("graphics: kernel is not square")
 	}
 	if size%2 != 1 {
-		return 0, errors.New("graphics: kernel size is not odd")
+		return 0, fmt.Errorf("graphics: kernel size is not odd")
 	}
 	return size, nil
 }

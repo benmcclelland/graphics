@@ -5,7 +5,7 @@
 package graphics
 
 import (
-	"errors"
+	"fmt"
 	"image"
 	"image/draw"
 	"math"
@@ -27,10 +27,10 @@ type BlurOptions struct {
 // Blur produces a blurred version of the image, using a Gaussian blur.
 func Blur(dst draw.Image, src image.Image, opt *BlurOptions) error {
 	if dst == nil {
-		return errors.New("graphics: dst is nil")
+		return fmt.Errorf("graphics: dst is nil")
 	}
 	if src == nil {
-		return errors.New("graphics: src is nil")
+		return fmt.Errorf("graphics: src is nil")
 	}
 
 	sd := DefaultStdDev
