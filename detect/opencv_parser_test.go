@@ -55,7 +55,7 @@ var (
 )
 
 func TestParseOpenCV(t *testing.T) {
-	file, err := os.Open("../../testdata/opencv.xml")
+	file, err := os.Open("../testdata/opencv.xml")
 	if err != nil {
 		t.Fatal(err)
 	}

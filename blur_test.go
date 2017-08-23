@@ -150,7 +150,7 @@ func TestBlurEmpty(t *testing.T) {
 }
 
 func TestBlurGopher(t *testing.T) {
-	src, err := graphicstest.LoadImage("../testdata/gopher.png")
+	src, err := graphicstest.LoadImage("testdata/gopher.png")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -160,7 +160,7 @@ func TestBlurGopher(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	cmp, err := graphicstest.LoadImage("../testdata/gopher-blur.png")
+	cmp, err := graphicstest.LoadImage("testdata/gopher-blur.png")
 	if err != nil {
 		t.Fatal(err)
 	}

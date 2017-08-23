@@ -126,7 +126,7 @@ func TestRotateEmpty(t *testing.T) {
 }
 
 func TestRotateGopherSide(t *testing.T) {
-	src, err := graphicstest.LoadImage("../testdata/gopher.png")
+	src, err := graphicstest.LoadImage("testdata/gopher.png")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -137,7 +137,7 @@ func TestRotateGopherSide(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	cmp, err := graphicstest.LoadImage("../testdata/gopher-rotate-side.png")
+	cmp, err := graphicstest.LoadImage("testdata/gopher-rotate-side.png")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -148,7 +148,7 @@ func TestRotateGopherSide(t *testing.T) {
 }
 
 func TestRotateGopherPartial(t *testing.T) {
-	src, err := graphicstest.LoadImage("../testdata/gopher.png")
+	src, err := graphicstest.LoadImage("testdata/gopher.png")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -159,7 +159,7 @@ func TestRotateGopherPartial(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	cmp, err := graphicstest.LoadImage("../testdata/gopher-rotate-partial.png")
+	cmp, err := graphicstest.LoadImage("testdata/gopher-rotate-partial.png")
 	if err != nil {
 		t.Fatal(err)
 	}

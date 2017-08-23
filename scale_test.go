@@ -115,7 +115,7 @@ func TestScaleEmpty(t *testing.T) {
 func TestScaleGopher(t *testing.T) {
 	dst := image.NewRGBA(image.Rect(0, 0, 100, 150))
 
-	src, err := graphicstest.LoadImage("../testdata/gopher.png")
+	src, err := graphicstest.LoadImage("testdata/gopher.png")
 	if err != nil {
 		t.Error(err)
 		return
@@ -125,7 +125,7 @@ func TestScaleGopher(t *testing.T) {
 	if err := Scale(dst, src); err != nil {
 		t.Fatal(err)
 	}
-	cmp, err := graphicstest.LoadImage("../testdata/gopher-100x150.png")
+	cmp, err := graphicstest.LoadImage("testdata/gopher-100x150.png")
 	if err != nil {
 		t.Error(err)
 		return
@@ -141,7 +141,7 @@ func TestScaleGopher(t *testing.T) {
 	if err := Scale(dst, src); err != nil {
 		t.Fatal(err)
 	}
-	cmp, err = graphicstest.LoadImage("../testdata/gopher-500x750.png")
+	cmp, err = graphicstest.LoadImage("testdata/gopher-500x750.png")
 	if err != nil {
 		t.Error(err)
 		return

@@ -45,7 +45,7 @@ func TestConvolve(t *testing.T) {
 		Y: []float64{0, 1, 0},
 	}
 
-	src, err := graphicstest.LoadImage("../../testdata/gopher.png")
+	src, err := graphicstest.LoadImage("../testdata/gopher.png")
 	if err != nil {
 		t.Fatal(err)
 	}

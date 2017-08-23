@@ -23,7 +23,7 @@ var opTests = []opTest{
 }
 
 func TestEdgeOps(t *testing.T) {
-	src, err := loadImage("../../testdata/gopher-100x150.png")
+	src, err := loadImage("../testdata/gopher-100x150.png")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -35,7 +35,7 @@ func TestEdgeOps(t *testing.T) {
 			t.Fatalf("%s: %v", ot.name, err)
 		}
 
-		magFile := fmt.Sprintf("../../testdata/%s-mag.png", ot.name)
+		magFile := fmt.Sprintf("../testdata/%s-mag.png", ot.name)
 		cmp, err := loadImage(magFile)
 		if err != nil {
 			t.Fatalf("%s mag: %v", ot.name, err)
@@ -44,7 +44,7 @@ func TestEdgeOps(t *testing.T) {
 			t.Fatalf("%s mag: %v", ot.name, err)
 		}
 
-		dirFile := fmt.Sprintf("../../testdata/%s-dir.png", ot.name)
+		dirFile := fmt.Sprintf("../testdata/%s-dir.png", ot.name)
 		cmp, err = loadImage(dirFile)
 		if err != nil {
 			t.Fatalf("%s dir: %v", ot.name, err)

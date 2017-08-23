@@ -16,14 +16,14 @@ import (
 func TestThumbnailGopher(t *testing.T) {
 	dst := image.NewRGBA(image.Rect(0, 0, 80, 80))
 
-	src, err := graphicstest.LoadImage("../testdata/gopher.png")
+	src, err := graphicstest.LoadImage("testdata/gopher.png")
 	if err != nil {
 		t.Fatal(err)
 	}
 	if err := Thumbnail(dst, src); err != nil {
 		t.Fatal(err)
 	}
-	cmp, err := graphicstest.LoadImage("../testdata/gopher-thumb-80x80.png")
+	cmp, err := graphicstest.LoadImage("testdata/gopher-thumb-80x80.png")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -36,14 +36,14 @@ func TestThumbnailGopher(t *testing.T) {
 func TestThumbnailLongGopher(t *testing.T) {
 	dst := image.NewRGBA(image.Rect(0, 0, 50, 150))
 
-	src, err := graphicstest.LoadImage("../testdata/gopher.png")
+	src, err := graphicstest.LoadImage("testdata/gopher.png")
 	if err != nil {
 		t.Fatal(err)
 	}
 	if err := Thumbnail(dst, src); err != nil {
 		t.Fatal(err)
 	}
-	cmp, err := graphicstest.LoadImage("../testdata/gopher-thumb-50x150.png")
+	cmp, err := graphicstest.LoadImage("testdata/gopher-thumb-50x150.png")
 	if err != nil {
 		t.Fatal(err)
 	}

@@ -78,7 +78,7 @@ func imageWithinTolerance(m0, m1 image.Image, tol int) error {
 }
 
 func TestLoG(t *testing.T) {
-	src, err := loadImage("../../testdata/gopher.png")
+	src, err := loadImage("../testdata/gopher.png")
 	if err != nil {
 		t.Error(err)
 		return
@@ -87,7 +87,7 @@ func TestLoG(t *testing.T) {
 	dst := image.NewGray(src.Bounds())
 	LaplacianOfGaussian(dst, src)
 
-	cmp, err := loadImage("../../testdata/gopher-log.png")
+	cmp, err := loadImage("../testdata/gopher-log.png")
 	if err != nil {
 		t.Error(err)
 		return
@@ -100,7 +100,7 @@ func TestLoG(t *testing.T) {
 }
 
 func TestDoG(t *testing.T) {
-	src, err := loadImage("../../testdata/gopher.png")
+	src, err := loadImage("../testdata/gopher.png")
 	if err != nil {
 		t.Error(err)
 		return
@@ -109,7 +109,7 @@ func TestDoG(t *testing.T) {
 	dst := image.NewGray(src.Bounds())
 	DifferenceOfGaussians(dst, src, 0.9, 1.2)
 
-	cmp, err := loadImage("../../testdata/gopher-dog.png")
+	cmp, err := loadImage("../testdata/gopher-dog.png")
 	if err != nil {
 		t.Error(err)
 		return
